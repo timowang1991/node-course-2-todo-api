@@ -59,7 +59,7 @@ app.get('/todos/:id', (req, res) => {
     });
 });
 
-app.delete('/todo/:id', (req, res) => {
+app.delete('/todos/:id', (req, res) => {
     // get the id
     var id = req.params.id;
 
@@ -78,7 +78,7 @@ app.delete('/todo/:id', (req, res) => {
         if (!todo) {
             return res.status(404).send();
         }
-        return res.send(todo);
+        return res.send({todo});
     }).catch((e) => {
         return res.status(400).send();
     });
